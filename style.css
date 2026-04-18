@@ -3,54 +3,46 @@
     --link-color: #1b779b;
     --background-color: #f8f5f5;
 }
-
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
-
 html{
     
     scroll-behavior: smooth; /* when you click inthe ID, it going to scroll dowm like soft*/
 }
-
 body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
 }
-
 a{
     color: var(--link-color);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     text-decoration: none; /* delete the line under the link*/
 }
-
 /*NAVBAR*/
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    height: 80px;background-color: aquamarine;}
-
+    height: 80px;background-color: rgb(244, 248, 247);
+}
 nav .left a {
     color: var(--text-color);
     font-size: 22px;
     font-weight: 600;
 }
-
 nav .right a {
     color: var(--text-color);
     margin: 0 10px;
 }
-
 nav .right a:last-child {
     color: var(--background-color);
     background-color: var(--text-color);
     padding: 5px 15px;
     border-radius: 5px;
 }
-
 nav .right a span{
     margin-left: 5px;
 }
@@ -61,7 +53,8 @@ nav .right a span{
     align-items: center;
     padding: 0 50px;
     margin: 50px 0;
-
+    margin-bottom: 200px;
+    gap: 40px;
 }
 .hero-section .text{
     flex: 5;
@@ -78,7 +71,7 @@ nav .right a span{
     border: 2px solid var(--link-color);
     border-radius: 5px;
     margin-right: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .hero-section .text .link a:hover{
     color: var(--text-color);
@@ -87,7 +80,48 @@ nav .right a span{
 .hero-section .headshot{
     flex: 2;
 }
+.headshot img {
+    width: 500px;
+    border-radius: 50% ;
+}
 
+/*SECTION 2: SKLILLS*/
+.skills-section {
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+.skills-section h2{
+    text-align: center;
+    font-size:35px;
+}
+.skills-section .text{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.skills-section .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 50px;
+    margin-right: 0 30px;
+}
+
+
+@media(max-width: 850px) {
+    /*SECTION 1 HERO*/
+    .hero-section .text h2{
+    font-size: 20px;
+    }
+}
+@media(max-width: 740px) {
+    /*SECTION 1 HERO*/
+    .hero-section {
+    flex-direction: column-reverse;
+    }
+     .hero-section .headshot img {
+    width: 300px;
+    }
+}
 @media(max-width: 600px){
     /*NAVBAR*/
     nav{
@@ -101,6 +135,7 @@ nav .right a span{
     nav .right a:last-child{
         color: var(--text-color);
         background-color: transparent;
+        padding: 0;
     }
 
     nav .right a span {
