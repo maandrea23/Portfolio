@@ -10,7 +10,8 @@
 }
 html{
     
-    scroll-behavior: smooth; /* when you click inthe ID, it going to scroll dowm like soft*/
+    scroll-behavior: smooth; 
+    /* when you click inthe ID, it going to scroll dowm like soft*/
 }
 body{
     font-family: 'Poppins', sans-serif;
@@ -19,6 +20,15 @@ body{
 a{
     color: var(--link-color);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     text-decoration: none; /* delete the line under the link*/
+}
+main{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+section{
+    flex: 0 0 100%;
+    scroll-snap-align: start;
 }
 /*NAVBAR*/
 nav{
@@ -87,6 +97,7 @@ nav{
                     color: white;
                     background-color: #4a96b4;
                     transform: translateY(-6px);
+                    border: none;
                 }
             }
         }
@@ -114,44 +125,144 @@ nav{
         margin-bottom: 20px;
         
     }
-    .cells {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        font-size: 40px;
-        margin-right: 0 30px;
-        .cell{
+        .cells {
             display: flex;
             justify-content: center;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            .cell{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 120px;
+                height: 120px;
+                padding: 15px;
+                border: 2px solid rgb(172, 167, 167);
+                border-radius: 10px;
+                margin: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
 
-            width: 330px;
-            padding: 10px 5px;
-            border: 1px solid rgb(172, 167, 167);
-            border-radius: 5px;
-            margin: 10px;
-            span{
-                font-size: 30px;
-            }
-            p{
-                display:none;
-            }
-            &:hover{
-                p{
-                    height: auto;
-                    display: block;
+                i {
+                    font-size: 2.5rem;
+                    margin-bottom: 5px;
                 }
-                i,span{
-                    display:none;
+
+                .skill-name {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: var(--text-color);
+                    text-align: center;
+                }
+
+                &:hover {
+                    transform: translateY(-10px);
+                    border-color: var(--link-color);
+                    box-shadow: 0 5px 15px rgba(27, 119, 155, 0.3);
+                }
+
+                .pop-overlay {
+                    position: absolute;
+                    top: -140px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 280px;
+                    background: rgba(255, 255, 255, 0.98);
+                    backdrop-filter: blur(10px);
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                    padding: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.3s ease;
+                    z-index: 1000;
+                    text-align: left;
+
+                    &.show,
+                    &.active {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateX(-50%) translateY(-10px);
+                    }
+
+                    .pop-content {
+                        padding: 20px;
+                        max-width: 100%;
+
+                        p {
+                            margin-bottom: 15px;
+                            line-height: 1.5;
+                            color: var(--text-color);
+                            font-size: 0.95rem;
+                        }
+
+                        .close-popup {
+                            background: var(--link-color);
+                            color: white;
+                            border: none;
+                            padding: 8px 16px;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            font-size: 0.85rem;
+                            transition: background 0.3s;
+
+                            &:hover {
+                                background: #4a96b4;
+                            }
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border: 10px solid transparent;
+                        border-top-color: rgba(255, 255, 255, 0.98);
+                    }
                 }
             }
 
-        }
             
         
     }
 }
-    
+/*SECTION 3: SKLILLS*/
+.testimony-section{
+    padding: o 50px;
+    margin-bottom: 100px;
+    h2{
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+    .group{
+        display: flex;
+        align-items: center;
+        gap:50px;
+        .person-details{
+            text-align: center;
+            flex:2;
+            img{
+                width: 400px;
+                aspect-ratio: 1/1 ;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+            p{
+                font-weight: 600;
+                
+            }
+        }
+        .text{
+            flex:8;
+        }
+    }
+
+}
+
 
 @media(max-width: 900px) {
     /*SECTION 1 HERO*/
@@ -188,14 +299,9 @@ nav{
     /*SECTION 2: SKLILLS*/
     .skills-section{
         padding:0 20px;
-        .cells{
-            .cell{
-                span{
-                    font-size: 16px;
-                }
-
-            }
-        }
+    .cells .cell .skill-name {
+        font-size: 0.8rem;
+    }
 
     }
 }

@@ -23,7 +23,7 @@
     <!--NAVBAR-->
     <nav>
         <div class="left">
-            <a href="/">Andrea Ahumada</a> <!--is "/" for back to the main page-->
+            <a href="index.html" class="navbar-brand">Andrea Ahumada</a> <!--is "/" for back to the main page-->
         </div>
         
         <div class="right">
@@ -84,41 +84,77 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ad labore sequi doloremque consequatur perspiciatis, iusto illum similique, fuga voluptatibus vel magni repudiandae maiores exercitationem quidem nam neque qui ex?
              </div>
              <div class="cells">
-                <div class="cell">
+                <div class="cell" data-skill="python">
                     <i class="fa-brands fa-python"></i>
-                    <span>Python</span>
-                    <p>python</p>
+                    <span class="skill-name">Python</span>
+                    <div class="pop-overlay">
+                        <div class="pop-content">
+                            <p>Python is a high-level, interpreted, general-purpose programming language designed for readability and simplicity.</p>
+                            <button class="close-popup">Close</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="cell">
-                   <i class="fa-brands fa-html5"></i>
-                    <span>HTML</span>
-                    <p>HTML</p>
+                <div class="cell" data-skill="html">
+                    <i class="fa-brands fa-html5"></i>
+                    <span class="skill-name">HTML</span>
+                    <div class="pop-overlay">
+                        <div class="pop-content">
+                            <p>HTML (HyperText Markup Language) is the standard language for creating web pages and web applications.</p>
+                            <button class="close-popup">Close</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="cell">
+                <div class="cell" data-skill="css">
                     <i class="fa-brands fa-css3-alt"></i>
-                    <span>CSS</span>
-                    <P>scss</P>
+                    <span class="skill-name">CSS</span>
+                    <div class="pop-overlay">
+                        <div class="pop-content">
+                            <p>CSS (Cascading Style Sheets) describes the presentation of a document written in HTML or XML.</p>
+                            <button class="close-popup">Close</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="cell">
+                <div class="cell" data-skill="javascript">
                     <i class="fa-brands fa-js"></i>
-                    <span>JavaScript</span>
-                    <p>js</p>
+                    <span class="skill-name">JavaScript</span>
+                    <div class="pop-overlay">
+                        <div class="pop-content">
+                            <p>JavaScript is a scripting language that enables interactive web pages and dynamic content.</p>
+                            <button class="close-popup">Close</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="cell">
+                <div class="cell" data-skill="sql">
                     <i class="fa-solid fa-database"></i>
-                    <span>SQL</span>
-                    <p>database</p>
+                    <span class="skill-name">SQL</span>
+                    <div class="pop-overlay">
+                        <div class="pop-content">
+                            <p>SQL (Structured Query Language) is used to manage and manipulate relational databases.</p>
+                            <button class="close-popup">Close</button>
+                        </div>
+                    </div>
                 </div>
              </div>
         </section>
 
         <!--SECTION 3:ABOUT ME -->
-        <section id="Testimony">
-            
+        <section id="Testimony" class="Testimony-section">
+            <h2>Testimony</h2>
+
+            <div class="group">
+                <div class="person-details">
+                    <img src="images/mujer-afro-sonriendo_63135-1103.avif">
+                    <p>Alice Brown</p>
+                    <p>lorem ipsum dolor sit</p>
+                </div>
+                <div class="text">
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et commodi voluptatem hic, suscipit nostrum magnam tenetur blanditiis? Laboriosam vitae sapiente, similique earum dignissimos odio rem repellendus nisi temporibus voluptas laudantium enim consequuntur vel labore iure neque voluptatem hic! Ab commodi, vero suscipit neque, perferendis dolorum dolore officia voluptatibus beatae nisi animi, sit nulla ducimus!"
+                </div>
+            </div>
         </section>
 
         <!--SECTION 4:CONTACT -->
@@ -128,8 +164,45 @@
 
     </main>
 
+    <script>
+        // Tooltip functionality for .cell
+        document.addEventListener('DOMContentLoaded', function() {
+            const cells = document.querySelectorAll('.cell');
+            const overlays = document.querySelectorAll('.pop-overlay');
 
+            // Hover show/hide (CSS primary, JS backup)
+            cells.forEach(cell => {
+                const overlay = cell.querySelector('.pop-overlay');
+                cell.addEventListener('mouseenter', () => overlay.classList.add('show'));
+                cell.addEventListener('mouseleave', () => overlay.classList.remove('show'));
+            });
 
+            // Click toggle (persistent)
+            cells.forEach(cell => {
+                cell.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const overlay = cell.querySelector('.pop-overlay');
+                    overlays.forEach(o => o !== overlay ? o.classList.remove('show', 'active') : null);
+                    overlay.classList.toggle('active');
+                });
+            });
+
+            // Close buttons
+            document.querySelectorAll('.close-popup').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    e.target.closest('.pop-overlay').classList.remove('show', 'active');
+                });
+            });
+
+            // Click outside to close
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.cell')) {
+                    overlays.forEach(o => o.classList.remove('show', 'active'));
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
