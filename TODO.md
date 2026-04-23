@@ -1,14 +1,11 @@
-# TODO: Implement Cell Tooltip Feature
+# Portfolio Fixes TODO
 
-## Plan Breakdown (Approved)
-1. ✅ **Plan confirmed** by user.
-2. ✅ **Create TODO.md** - Track progress.
-3. ✅ **Update index.html**: Added skill name spans, pop-overlays/content with descriptions to all 5 cells, inline <script> for hover/click interactions.
+## Pending Steps (Approved Plan)
+1. [x] Edit style.scss for horizontal scroll enhancement, skills simplification, layout fixes.
+2. [x] Edit index.html: Remove popups from skills cells, fix class names/IDs.
+3. [x] Compile SCSS to CSS (Live Sass auto), test Go Live.
+4. [x] Verify horizontal scroll, simplified skills, page visibility.
+5. [x] [Done] Update TODO on completion.
 
-4. ✅ **Update style.scss**: Refactored .cell for icon+name (column layout), added small positioned tooltip (.pop-overlay) with hover/click classes ('show'/'active'), arrow pointer, backdrop blur, responsive mobile text sizing.
-
-5. ⬜ **Test changes**: Hover/click cells, check positioning/responsiveness, fix any issues.
-6. ⬜ **attempt_completion**: Present final result with demo command.
-
-**Next**: Testing complete, ready for completion.
+Track progress here after each step.
 

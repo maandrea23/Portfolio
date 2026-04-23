@@ -19,7 +19,6 @@
 
 </head>
 <body>
-   
     <!--NAVBAR-->
     <nav>
         <div class="left">
@@ -32,12 +31,12 @@
                 <span>Github</span>
             </a>
 
-             <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-linkedin"></i>
                 <span>linkedin</span>
             </a>
 
-             <a href="mailto:andrea@hotmail.com">
+            <a href="mailto:andrea@hotmail.com">
                 <i class="fa-solid fa-envelope"></i>
                 <span>Email</span>
             </a>
@@ -60,12 +59,12 @@
                         <span>Skills</span>
                     </a>
                     
-                      <a href="#Testimony">
+                    <a href="#testimony">
                         <i class="fa-solid fa-pen"></i>
                         <span>Testimony</span>
                     </a>
 
-                      <a href="#Contact">
+                    <a href="#Contact">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Contact</span>
                     </a>
@@ -80,69 +79,44 @@
         <!--SECTION 2:SKILL -->
         <section id="Skills" class="skills-section">
             <h2>Skills</h2>
-             <div class="text">
+            <div class="text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ad labore sequi doloremque consequatur perspiciatis, iusto illum similique, fuga voluptatibus vel magni repudiandae maiores exercitationem quidem nam neque qui ex?
-             </div>
-             <div class="cells">
+            </div>
+            <div class="cells">
                 <div class="cell" data-skill="python">
                     <i class="fa-brands fa-python"></i>
                     <span class="skill-name">Python</span>
-                    <div class="pop-overlay">
-                        <div class="pop-content">
-                            <p>Python is a high-level, interpreted, general-purpose programming language designed for readability and simplicity.</p>
-                            <button class="close-popup">Close</button>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="cell" data-skill="html">
                     <i class="fa-brands fa-html5"></i>
                     <span class="skill-name">HTML</span>
-                    <div class="pop-overlay">
-                        <div class="pop-content">
-                            <p>HTML (HyperText Markup Language) is the standard language for creating web pages and web applications.</p>
-                            <button class="close-popup">Close</button>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="cell" data-skill="css">
                     <i class="fa-brands fa-css3-alt"></i>
                     <span class="skill-name">CSS</span>
-                    <div class="pop-overlay">
-                        <div class="pop-content">
-                            <p>CSS (Cascading Style Sheets) describes the presentation of a document written in HTML or XML.</p>
-                            <button class="close-popup">Close</button>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="cell" data-skill="javascript">
                     <i class="fa-brands fa-js"></i>
                     <span class="skill-name">JavaScript</span>
-                    <div class="pop-overlay">
-                        <div class="pop-content">
-                            <p>JavaScript is a scripting language that enables interactive web pages and dynamic content.</p>
-                            <button class="close-popup">Close</button>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="cell" data-skill="sql">
                     <i class="fa-solid fa-database"></i>
                     <span class="skill-name">SQL</span>
-                    <div class="pop-overlay">
-                        <div class="pop-content">
-                            <p>SQL (Structured Query Language) is used to manage and manipulate relational databases.</p>
-                            <button class="close-popup">Close</button>
-                        </div>
-                    </div>
+
                 </div>
-             </div>
+            </div>
         </section>
 
-        <!--SECTION 3:ABOUT ME -->
-        <section id="Testimony" class="Testimony-section">
+        <!--SECTION 3:TESTIMONY-->
+        <section id="testimony" class="testimony-section">
             <h2>Testimony</h2>
 
             <div class="group">
@@ -158,8 +132,26 @@
         </section>
 
         <!--SECTION 4:CONTACT -->
-        <section id="contact" class="">
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <div class="group">
+                <div class="text">
+                    If you want to get in touch, feel free to reach out through any of the platforms listed in the navbar or send me an email. I'm always open to discussing new projects, collaborations, or opportunities to contribute to the tech community. Looking forward to connecting with you!
+                </div>
+                
+                <form>
+                <label for="name">Name</label>
+                <input type="text" id="name">
 
+                <label for="email">Email</label>
+                <input type="email" id="email">
+
+                <label for="message">Message</label>
+                <textarea name="" id="message" cols="30" rows="10"></textarea>
+
+                <button type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
 
     </main>
